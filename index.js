@@ -11,14 +11,14 @@ function run() {
     }
   }
 
-  for( let em in emojiMap ) {
-    document.querySelectorAll('span[data-emoticon=partyparrot] > span').forEach(n => {
-      n.style = `background-image: url("${document.location.origin}/${emojiMap[em].url}")`;
+  Object.entries(emojiMap).forEach(([movingEmoji, staticEmoji]) => {
+    document.querySelectorAll(`span[data-emoticon=${movingEmoji}] > span`).forEach(n => {
+      n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
     });
-    document.querySelectorAll('button[id$="-partyparrot"] span.Reaction__emoji.emoticon').forEach(n => {
-      n.style = `background-image: url("${document.location.origin}/${emojiMap[em].url}")`;
-    });
-  }
+    document.querySelectorAll(`button[id$="-${movingEmoji}"] span.Reaction__emoji.emoticon`).forEach(n => {
+      n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
+    });    
+  });
 }
 
 run();
