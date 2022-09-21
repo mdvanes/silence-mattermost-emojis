@@ -5,6 +5,14 @@ function run() {
       name: 'parrot',
       url: 'static/emoji/1f99c.png'
     },
+    ultraparrot: {
+      name: 'parrot',
+      url: 'static/emoji/1f99c.png'
+    },
+    woot: {
+      name: 'parrot',
+      url: 'static/emoji/1f99c.png'
+    },
     alert: {
       name: 'alarm_clock',
       url: 'static/emoji/23f0.png'
@@ -20,5 +28,7 @@ function run() {
     });    
   });
 }
+
+document.querySelectorAll('li.SidebarChannel').forEach(n => n.addEventListener('click', (ev) => setTimeout(run, 800)));
 
 run();
