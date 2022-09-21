@@ -9,7 +9,7 @@ function run() {
       name: 'alarm_clock',
       url: 'static/emoji/23f0.png'
     }
-  }
+  };
 
   Object.entries(emojiMap).forEach(([movingEmoji, staticEmoji]) => {
     document.querySelectorAll(`span[data-emoticon=${movingEmoji}] > span`).forEach(n => {
