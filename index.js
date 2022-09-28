@@ -23,6 +23,12 @@ function run() {
     document.querySelectorAll(`span[data-emoticon=${movingEmoji}] > span`).forEach(n => {
       n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
     });
+    document.querySelectorAll(`span[data-emoticon=${movingEmoji}]`).forEach(n => {
+      const hasImg = n.style["background-image"];
+      if(hasImg) {
+       n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;        
+      }
+    });
     document.querySelectorAll(`button[id$="-${movingEmoji}"] span.Reaction__emoji.emoticon`).forEach(n => {
       n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
     });    
