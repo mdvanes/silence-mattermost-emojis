@@ -31,7 +31,10 @@ function run() {
     });
     document.querySelectorAll(`button[id$="-${movingEmoji}"] span.Reaction__emoji.emoticon`).forEach(n => {
       n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
-    });    
+    });   
+    document.querySelectorAll(`button[id$="-${movingEmoji}"] img.Reaction__emoji.emoticon`).forEach(n => {
+      n.style = `background-image: url("${document.location.origin}/${staticEmoji.url}")`;
+    });
   });
 }
 
